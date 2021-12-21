@@ -53,6 +53,16 @@ class StatisticsCounter extends React.Component {
       return { bad: prevState.bad + 1 };
     });
   };
+  countTotalFeedback = () => {
+    const totalFeedback = this.state.good + this.state.neutral + this.state.bad;
+    return totalFeedback;
+  };
+  countPositiveFeedbackPercentage = () => {
+    const PositiveFeedbackPercentage = Math.round(
+      (this.state.good * 100) / this.countTotalFeedback()
+    );
+    return PositiveFeedbackPercentage;
+  };
 
   render() {
     return (
@@ -73,10 +83,13 @@ class StatisticsCounter extends React.Component {
             Bad:<CounterValue>{this.state.bad}</CounterValue>
           </StatisticsItem>
           <StatisticsItem>
-            Total:<CounterValue></CounterValue>
+            Total:<CounterValue>{this.countTotalFeedback()}</CounterValue>
           </StatisticsItem>
           <StatisticsItem>
-            Positive feedback:<CounterValue></CounterValue>
+            Positive feedback:
+            <CounterValue>
+              {this.countPositiveFeedbackPercentage()}%
+            </CounterValue>
           </StatisticsItem>
         </StatisticsInfo>
       </StatisticsCounterBox>
