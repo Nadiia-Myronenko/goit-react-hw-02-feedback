@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-const Section = styled.section`
+export const SectionContainer = styled.section`
   margin-bottom: 30px;
 `;
 
-export default Section;
+export const Title = styled.h2``;
