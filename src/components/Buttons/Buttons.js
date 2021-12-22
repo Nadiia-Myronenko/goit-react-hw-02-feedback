@@ -1,16 +1,12 @@
 import React from "react";
 import { Button, ButtonWrapper } from "./Buttons.styled";
 
-const FeedbackOptions = ({
-  onGoodIncrement,
-  onNeutralIncrement,
-  onBadIncrement,
-}) => {
+const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <ButtonWrapper>
-      <Button onClick={onGoodIncrement}>Good</Button>
-      <Button onClick={onNeutralIncrement}>Neutral</Button>
-      <Button onClick={onBadIncrement}>Bad</Button>
+      <Button onClick={() => onLeaveFeedback("good")}>Good</Button>
+      <Button onClick={() => onLeaveFeedback("neutral")}>Neutral</Button>
+      <Button onClick={() => onLeaveFeedback("bad")}>Bad</Button>
     </ButtonWrapper>
   );
 };

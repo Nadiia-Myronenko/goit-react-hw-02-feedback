@@ -9,7 +9,7 @@ export const Button = styled.button`
   background-color: transparent;
   margin-right: 10px;
   &:hover,
-  &:focus {
+  &:focus-visible {
     color: #fff;
     background-color: #8b4513;
     cursor: pointer;
