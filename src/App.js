@@ -1,4 +1,5 @@
 import { Component } from "react";
+
 import Wrapper from "./components/Wrapper/Wrapper.styled";
 import MainHeader from "./components/MainHeader/MainHeader.styled";
 import Section from "./components/Section/Section";
@@ -57,5 +58,5 @@ class App extends Component {
     );
   }
 }
+
 export default App;
-/* <Notification message="There is no feedback" />*/

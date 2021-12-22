@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Button, ButtonWrapper } from "./Buttons.styled";
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
@@ -9,5 +10,9 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
       <Button onClick={() => onLeaveFeedback("bad")}>Bad</Button>
     </ButtonWrapper>
   );
+};
+FeedbackOptions.propTypes = {
+  onLeaveFeedback: PropTypes.func,
+  options: PropTypes.object,
 };
 export default FeedbackOptions;
