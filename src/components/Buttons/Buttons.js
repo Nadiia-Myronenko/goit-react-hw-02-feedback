@@ -2,17 +2,19 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Button, ButtonWrapper } from "./Buttons.styled";
 
-const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+const Buttons = ({ options, onLeaveFeedback }) => {
   return (
     <ButtonWrapper>
-      <Button onClick={() => onLeaveFeedback("good")}>Good</Button>
-      <Button onClick={() => onLeaveFeedback("neutral")}>Neutral</Button>
-      <Button onClick={() => onLeaveFeedback("bad")}>Bad</Button>
+      {options.map((option, index) => (
+        <Button key={index} onClick={() => onLeaveFeedback(option)}>
+          {option}
+        </Button>
+      ))}
     </ButtonWrapper>
   );
 };
-FeedbackOptions.propTypes = {
+Buttons.propTypes = {
   onLeaveFeedback: PropTypes.func,
-  options: PropTypes.object,
+  options: PropTypes.array,
 };
-export default FeedbackOptions;
+export default Buttons;
